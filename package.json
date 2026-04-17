@@ -1,0 +1,16 @@
+{
+  "name": "fhnw-connect",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace server\" \"npm run dev --workspace client\"",
+    "start": "npm run start --workspace server",
+    "postinstall": "npm --workspace server run prisma:generate"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}

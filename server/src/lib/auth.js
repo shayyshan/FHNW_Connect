@@ -1,0 +1,20 @@
+const jwt = require('jsonwebtoken');
+const dotenv = require('dotenv');
+dotenv.config();
+
+const JWT_SECRET = process.env.JWT_SECRET || 'replace-this-with-a-secure-secret';
+
+function createToken(user) {
+  return jwt.sign({ userId: user.id, email: user.email }, JWT_SECRET, {
+    expiresIn: '7d',
+  });
+}
+
+function verifyToken(token) {
+  return jwt.verify(token, JWT_SECRET);
+}
+
+module.exports = {
+  createToken,
+  verifyToken,
+};

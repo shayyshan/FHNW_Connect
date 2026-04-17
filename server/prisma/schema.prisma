@@ -1,0 +1,91 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                Int                   @id @default(autoincrement())
+  username          String                @unique
+  email             String                @unique
+  password_hash     String
+  activities        UserActivity[]
+  favoriteClubs     UserFavoriteClub[]
+  favoriteActivities UserFavoriteActivity[]
+  posts             CommunityPost[]
+}
+
+model Club {
+  id              Int               @id @default(autoincrement())
+  club_name       String
+  club_description String
+  image_path      String?
+  activities      Activity[]
+  posts           CommunityPost[]
+  favoriteBy      UserFavoriteClub[]
+}
+
+model Activity {
+  id                Int                   @id @default(autoincrement())
+  activity_title    String
+  activity_description String
+  activity_date     DateTime
+  start_time        String
+  end_time          String
+  activity_location String
+  max_slots         Int
+  activity_category String
+  image_path        String?
+  club              Club                  @relation(fields: [club_id], references: [id])
+  club_id           Int
+  participants      UserActivity[]
+  favoriteBy        UserFavoriteActivity[]
+}
+
+model CommunityPost {
+  id                    Int      @id @default(autoincrement())
+  title                 String
+  description           String
+  category              String
+  keywords              String
+  created_at            DateTime @default(now())
+  club                  Club?    @relation(fields: [club_id], references: [id])
+  club_id               Int?
+  user                  User     @relation(fields: [user_id], references: [id])
+  user_id               Int
+}
+
+model UserActivity {
+  id                  Int      @id @default(autoincrement())
+  registration_status String
+  joined_at           DateTime @default(now())
+  user                User     @relation(fields: [user_id], references: [id])
+  user_id             Int
+  activity            Activity @relation(fields: [activity_id], references: [id])
+  activity_id         Int
+
+  @@unique([user_id, activity_id])
+}
+
+model UserFavoriteClub {
+  id      Int  @id @default(autoincrement())
+  user    User @relation(fields: [user_id], references: [id])
+  user_id Int
+  club    Club @relation(fields: [club_id], references: [id])
+  club_id Int
+
+  @@unique([user_id, club_id])
+}
+
+model UserFavoriteActivity {
+  id          Int      @id @default(autoincrement())
+  user        User     @relation(fields: [user_id], references: [id])
+  user_id     Int
+  activity    Activity @relation(fields: [activity_id], references: [id])
+  activity_id Int
+
+  @@unique([user_id, activity_id])
+}
