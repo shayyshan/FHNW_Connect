@@ -42,8 +42,8 @@ The design of FHNWConnect focuses on a clean, modern, and user-friendly interfac
 A color scheme based on yellow, white, and light gray ensures visual consistency. Typography is simple and readable to improve accessibility.
 
 The layout supports:
-- **List view** for browsing activities efficiently
-- **Calendar view** for time-based navigation
+- **List view** for browsing activities efficiently  
+- **Calendar view** for time-based navigation  
 
 The user experience is optimized to allow students to discover activities quickly with minimal interaction.
 
@@ -54,19 +54,19 @@ The user experience is optimized to allow students to discover activities quickl
 The wireframe defines the main structure of the application.
 
 The interface is organized with a sidebar on the left, which serves as the main navigation:
-- Home
-- Clubs
-- Sports
-- Community
+- Home  
+- Clubs  
+- Sports  
+- Community  
 
 On the Home page:
-- Calendar overview
-- Upcoming Activities
-- Favorite Clubs and Activities
+- Calendar overview  
+- Upcoming Activities  
+- Favorite Clubs and Activities  
 
 At the top:
-- Search bar
-- Help, Login, and Sign Up
+- Search bar  
+- Help, Login, and Sign Up  
 
 ---
 
@@ -75,22 +75,22 @@ At the top:
 The prototype demonstrates the visual design and interaction flow of the application.
 
 #### 🏠 Home Dashboard
-<img src="images/home.png" width="700">
+<img src="FHNW%20Connect_Home.png" width="700">
 
 *Figure 1: Home dashboard with calendar and personalized content*
 
 #### 🏫 Clubs Page
-<img src="images/clubs.png" width="700">
+<img src="FHNW%20Connect_Clubs.png" width="700">
 
 *Figure 2: Clubs overview with favorite functionality and activity sidebar*
 
 #### 🏅 Sports Page
-<img src="images/sports.png" width="700">
+<img src="FHNW%20Connect_Sports.png" width="700">
 
 *Figure 3: Weekly sports planner with join/leave functionality*
 
 #### 💬 Community Page
-<img src="images/community.png" width="700">
+<img src="FHNW%20Connect_Community.png" width="700">
 
 *Figure 4: Community forum with posts, filters, and interactions*
 
@@ -99,27 +99,27 @@ The prototype demonstrates the visual design and interaction flow of the applica
 ### Domain Design
 
 Main entities:
-- User
-- Club
-- Activity
-- Community_Post
-- User_Activity
-- User_Favorite_Club
-- User_Favorite_Activity
+- User  
+- Club  
+- Activity  
+- Community_Post  
+- User_Activity  
+- User_Favorite_Club  
+- User_Favorite_Activity  
 
 #### Entity Relationship Diagram (ERD)
-<img src="images/erd.png" width="800">
+<img src="Domain%20Model_FHNW%20Connect.png" width="800">
 
 ---
 
 ### Relationships
 
-- A User can join multiple Activities via **User_Activity**
-- A User can favorite multiple Clubs and Activities
-- A User can create multiple Community Posts
-- A Club can organize multiple Activities
-- An Activity belongs to one Club
-- A Community Post is created by a User and may belong to a Club
+- A User can join multiple Activities via **User_Activity**  
+- A User can favorite multiple Clubs and Activities  
+- A User can create multiple Community Posts  
+- A Club can organize multiple Activities  
+- An Activity belongs to one Club  
+- A Community Post is created by a User and may belong to a Club  
 
 The **User_Activity** entity acts as a junction table between User and Activity and stores participation details such as status and timestamp.
 
@@ -129,11 +129,11 @@ The **User_Activity** entity acts as a junction table between User and Activity 
 
 The business logic manages interactions between users, activities, and community features:
 
-- Users can join or leave activities
-- Each user can only have one participation per activity
-- Favorites personalize the Home Dashboard
-- Users can create and manage community posts
-- Clubs can create activities and announcements
+- Users can join or leave activities  
+- Each user can only have one participation per activity  
+- Favorites personalize the Home Dashboard  
+- Users can create and manage community posts  
+- Clubs can create activities and announcements  
 
 ---
 
