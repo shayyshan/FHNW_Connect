@@ -75,22 +75,22 @@ At the top:
 The prototype demonstrates the visual design and interaction flow of the application.
 
 #### 🏠 Home Dashboard
-<img src="FHNW%20Connect_Home.png" width="700">
+<img src="images/FHNW%20Connect_Home.png" width="700">
 
 *Figure 1: Home dashboard with calendar and personalized content*
 
 #### 🏫 Clubs Page
-<img src="FHNW%20Connect_Clubs.png" width="700">
+<img src="images/FHNW%20Connect_Clubs.png" width="700">
 
 *Figure 2: Clubs overview with favorite functionality and activity sidebar*
 
 #### 🏅 Sports Page
-<img src="FHNW%20Connect_Sports.png" width="700">
+<img src="images/FHNW%20Connect_Sports.png" width="700">
 
 *Figure 3: Weekly sports planner with join/leave functionality*
 
 #### 💬 Community Page
-<img src="FHNW%20Connect_Community.png" width="700">
+<img src="images/FHNW%20Connect_Community.png" width="700">
 
 *Figure 4: Community forum with posts, filters, and interactions*
 
@@ -108,7 +108,7 @@ Main entities:
 - User_Favorite_Activity  
 
 #### Entity Relationship Diagram (ERD)
-<img src="Domain%20Model_FHNW%20Connect.png" width="800">
+<img src="images/Domain%20Model_FHNW%20Connect.png" width="800">
 
 ---
 
